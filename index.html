@@ -15,6 +15,7 @@
   <header class="site-header">
     <a class="brand" href="#top">Abrar</a>
     <nav aria-label="Main">
+      <a href="#featured">Featured</a>
       <a href="#films">Films</a>
       <a href="#projects">Code</a>
       <a href="#writing">Writing</a>
@@ -29,10 +30,33 @@
       <h1>Hi, I’m Abrar.</h1>
       <p class="lead">I’m Masnoon Abrar Siam, a Computer Science &amp; Engineering student at Daffodil International University. I direct short films, documentaries and video projects, and I write poetry. I like mixing analytical thinking with cinematic storytelling.</p>
       <p class="actions">
-        <a class="btn primary" href="#films">Watch my films</a>
+        <a class="btn primary" href="#featured">Featured project</a>
+        <a class="btn" href="#films">Watch my films</a>
         <a class="btn" href="#projects">See my code</a>
         <a class="btn" href="resume.pdf">Download CV</a>
       </p>
+    </section>
+
+    <!-- FEATURED PROJECT: always keep this first. The live site updates on its own, so this link always shows the latest version. -->
+    <section id="featured" class="featured">
+      <h2>Featured project</h2>
+      <article class="feature-card">
+        <h3><span lang="bn">তেইশ টাকা</span> (Teish Taka)</h3>
+        <p class="meta">Website · live · for Daffodil International University campus</p>
+        <p>A campus service I designed and built end to end. Someone fills in a short form with the recipient and their message, pays by bKash or Nagad, and I write the letter by hand, add a crisp 2 taka note, and deliver it in person. The sender gets proof of delivery on WhatsApp.</p>
+        <p><strong>What I built:</strong></p>
+        <ul>
+          <li>An order form for handwritten letters, with an anonymous-sender option and a total that updates while you type</li>
+          <li>A gift shop with a cart and checkout, including an option to pay half online and half on delivery</li>
+          <li>Order tracking by order ID and email, with email updates when the status changes</li>
+          <li>A Bangla-language interface with FAQs, a privacy and rules page, and sharing previews for social media</li>
+        </ul>
+        <p><strong>What’s next:</strong> secondhand books and items, borrowing and renting, and homemade food, all marked “coming soon” on the site.</p>
+        <!-- TODO: add a line about what you built it with (for example HTML, CSS, JavaScript and Vercel). -->
+        <p class="actions">
+          <a class="btn primary" href="https://teish-taka-zquj.vercel.app/" target="_blank" rel="noopener">Visit the website</a>
+        </p>
+      </article>
     </section>
 
     <!-- FILMS: replace each placeholder with a real film. Copy one <article> block to add more. -->
