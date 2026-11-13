@@ -1,46 +1,32 @@
-# Portfolio
+# Portfolio v2 (hacker theme)
 
-Personal portfolio of Masnoon Abrar Siam (CSE student and short film director at Daffodil International University).
+Features: matrix/neon theme switch, sound effects (SOUND button), "Hack the terminal" puzzle game with scoreboard, visitor counter, guestbook, featured project (Teish Taka).
 
-Live site: https://masnoon-abrar-siam--portfolio-01.vercel.app/
+## Run
+Do not double-click `index.html` (browsers block modules from files). Use VS Code "Live Server", or just push to GitHub and open the deployed site.
 
-## Files
+## Demo mode
+Until you add Firebase keys, the counter, scoreboard and guestbook only save in the visitor's own browser.
 
-- `index.html`: all page content
-- `style.css`: all styling (follows light or dark mode automatically)
-- `resume.pdf`: the CV linked from the "Download CV" button (add your own file with this exact name)
+## Turn on shared data (Firebase, free)
+1. Go to console.firebase.google.com, create a project (turn off Analytics).
+2. Build > Firestore Database > Create database (production mode, pick a nearby region).
+3. Firestore > Rules tab > paste everything from `firestore.rules` > Publish.
+4. Project settings (gear) > Your apps > Web (</>) > register app > copy the `firebaseConfig` values.
+5. Paste `apiKey`, `authDomain`, `projectId`, `appId` into `firebase-config.js`.
+6. Push to GitHub. Firebase web keys are meant to be public; the rules protect your data.
 
-## Featured project
+Note: the scoreboard runs in the visitor's browser, so determined people could fake a score. Fine for a fun game.
 
-The "Featured project" section at the top of `index.html` shows Teish Taka (https://teish-taka-zquj.vercel.app/). It links to the live address, so visitors always see the latest version after you redeploy. To feature a different project later, edit that block.
-
-## Add a new code project
-
-1. Open `index.html` and find the `CODE PROJECTS` comment.
-2. Copy one `<article class="item">` block and paste it at the top of the list.
-3. Change the title, the one-line tag (`meta`), the goal, what you built, what you practiced, and the source link.
-
-Films and writing work the same way: copy an `<article class="item">` block inside that section.
-
-## Preview locally
-
-Open `index.html` in your browser. No build step is needed.
-
-## Publish an update
-
+## Update the site
 ```bash
 git add .
-git commit -m "Add new project"
+git commit -m "Update portfolio"
 git push
 ```
 
-Vercel redeploys automatically after each push to `main`.
-
-## Still to do
-
-- Add a line about what Teish Taka is built with (see the TODO in the Featured section)
-- Replace the placeholder text in Films and Writing
-- Replace "Editing software you use" in Skills and tools
-- Add your real LinkedIn profile link in Contact
+## To do
 - Add `resume.pdf`
-- Link each code project to its own folder in the `c-projects` repo
+- Replace Films/Writing placeholders and "editing software you use"
+- Real LinkedIn link
+- Add what Teish Taka is built with

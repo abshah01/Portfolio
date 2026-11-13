@@ -1,209 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Masnoon Abrar Siam | Portfolio</title>
-  <meta name="description" content="Portfolio of Masnoon Abrar Siam: CSE student and short film director at Daffodil International University.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masnoon Abrar Siam | Portfolio</title>
+<meta name="description" content="CSE student and short film director. Portfolio with a hacking puzzle game and a guestbook.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-<body id="top">
+<body>
+<canvas id="rain" aria-hidden="true"></canvas>
+<header class="top">
+  <a class="brand" href="#top">~/abrar</a>
+  <nav aria-label="Main"><a href="#featured">featured</a><a href="#code">code</a><a href="#films">films</a><a href="#game">game</a><a href="#guestbook">guestbook</a><a href="#about">about</a><a href="#contact">contact</a></nav>
+  <div class="tools"><button id="themeBtn" class="btn sm" type="button">THEME</button><button id="sndBtn" class="btn sm" type="button">SOUND</button></div>
+</header>
 
-  <header class="site-header">
-    <a class="brand" href="#top">Abrar</a>
-    <nav aria-label="Main">
-      <a href="#featured">Featured</a>
-      <a href="#films">Films</a>
-      <a href="#projects">Code</a>
-      <a href="#writing">Writing</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<main id="top">
+<section class="hero">
+  <p class="prompt">abrar@portfolio:~$ <span id="typed"></span><span class="cur">_</span></p>
+  <h1>Masnoon Abrar Siam</h1>
+  <p class="lead">CSE student at Daffodil International University. I write C, direct short films and documentaries, and write poetry. Logic and storytelling, same brain.</p>
+  <p class="visits">visitors: <b id="visits">------</b></p>
+  <p class="row"><a class="btn pri" href="#featured">featured project</a><a class="btn" href="#game">play the game</a><a class="btn" href="#guestbook">sign my guestbook</a><a class="btn" href="resume.pdf">download cv</a></p>
+</section>
 
-  <main>
+<!-- FEATURED: keep this first. The link always opens your latest live site. -->
+<section id="featured">
+  <h2>/featured</h2>
+  <article class="card big">
+    <h3><span lang="bn">তেইশ টাকা</span> (Teish Taka)</h3>
+    <p class="meta">website · live · DIU campus</p>
+    <p>A campus service I designed and built end to end. Fill in a short form, pay by bKash or Nagad, and I write your letter by hand, add a crisp 2 taka note, and deliver it in person. You get proof of delivery on WhatsApp.</p>
+    <ul>
+      <li>Letter order form with an anonymous option and a live total</li>
+      <li>Gift shop with cart, checkout and pay-half-now option</li>
+      <li>Order tracking by order ID and email, with email updates</li>
+      <li>Bangla interface, FAQs, privacy page and social sharing previews</li>
+    </ul>
+    <p>Next: secondhand books, borrowing and renting, homemade food (marked coming soon on the site).</p>
+    <!-- TODO: add what it is built with -->
+    <p class="row"><a class="btn pri" href="https://teish-taka-zquj.vercel.app/" target="_blank" rel="noopener">visit the website</a></p>
+  </article>
+</section>
 
-    <section class="hero">
-      <h1>Hi, I’m Abrar.</h1>
-      <p class="lead">I’m Masnoon Abrar Siam, a Computer Science &amp; Engineering student at Daffodil International University. I direct short films, documentaries and video projects, and I write poetry. I like mixing analytical thinking with cinematic storytelling.</p>
-      <p class="actions">
-        <a class="btn primary" href="#featured">Featured project</a>
-        <a class="btn" href="#films">Watch my films</a>
-        <a class="btn" href="#projects">See my code</a>
-        <a class="btn" href="resume.pdf">Download CV</a>
-      </p>
-    </section>
+<!-- CODE: copy one <article class="card"> to add a project. Newest first. -->
+<section id="code">
+  <h2>/code</h2>
+  <div class="grid">
+    <article class="card"><h3>Student Record Management</h3><p class="meta">C · binary files</p><p>Menu-driven program that saves students (ID, name, marks) to a binary file and blocks duplicate IDs. Practiced file I/O with structs and validation.</p><a href="https://github.com/abshah01/c-projects">source</a></article>
+    <article class="card"><h3>Library Management</h3><p class="meta">C · linked list</p><p>Add and find books, issue them for 7 days, and charge a fine per late day. Practiced dynamic memory, linked lists and time.</p><a href="https://github.com/abshah01/c-projects">source</a></article>
+    <article class="card"><h3>Tic-Tac-Toe Minimax AI</h3><p class="meta">C · game AI</p><p>Console game against an unbeatable AI that picks moves with minimax. Practiced recursion and game trees.</p><a href="https://github.com/abshah01/c-projects">source</a></article>
+    <article class="card"><h3>Bank Account Simulator</h3><p class="meta">C · persistence</p><p>PIN login, deposits, withdrawals, a saved balance and a timestamped transaction log. Practiced persistence and logging.</p><a href="https://github.com/abshah01/c-projects">source</a></article>
+    <article class="card"><h3>Word Counter and Search</h3><p class="meta">C · command line</p><p>A mini wc and grep: counts lines, words and characters, and searches a file for a word. Practiced arguments and text processing.</p><a href="https://github.com/abshah01/c-projects">source</a></article>
+  </div>
+</section>
 
-    <!-- FEATURED PROJECT: always keep this first. The live site updates on its own, so this link always shows the latest version. -->
-    <section id="featured" class="featured">
-      <h2>Featured project</h2>
-      <article class="feature-card">
-        <h3><span lang="bn">তেইশ টাকা</span> (Teish Taka)</h3>
-        <p class="meta">Website · live · for Daffodil International University campus</p>
-        <p>A campus service I designed and built end to end. Someone fills in a short form with the recipient and their message, pays by bKash or Nagad, and I write the letter by hand, add a crisp 2 taka note, and deliver it in person. The sender gets proof of delivery on WhatsApp.</p>
-        <p><strong>What I built:</strong></p>
-        <ul>
-          <li>An order form for handwritten letters, with an anonymous-sender option and a total that updates while you type</li>
-          <li>A gift shop with a cart and checkout, including an option to pay half online and half on delivery</li>
-          <li>Order tracking by order ID and email, with email updates when the status changes</li>
-          <li>A Bangla-language interface with FAQs, a privacy and rules page, and sharing previews for social media</li>
-        </ul>
-        <p><strong>What’s next:</strong> secondhand books and items, borrowing and renting, and homemade food, all marked “coming soon” on the site.</p>
-        <!-- TODO: add a line about what you built it with (for example HTML, CSS, JavaScript and Vercel). -->
-        <p class="actions">
-          <a class="btn primary" href="https://teish-taka-zquj.vercel.app/" target="_blank" rel="noopener">Visit the website</a>
-        </p>
-      </article>
-    </section>
+<!-- FILMS and WRITING: replace the placeholders. -->
+<section id="films">
+  <h2>/films</h2>
+  <div class="grid">
+    <article class="card"><h3>Short film title</h3><p class="meta">director · year · runtime</p><p>Two sentences on the story and what you wanted viewers to feel.</p><a href="#">watch</a></article>
+    <article class="card"><h3>Documentary title</h3><p class="meta">director · year · runtime</p><p>What it is about and how you approached it.</p><a href="#">watch</a></article>
+    <article class="card"><h3>Poem or piece title</h3><p class="meta">writing · year</p><p>An excerpt or one line about the piece.</p><a href="#">read</a></article>
+  </div>
+</section>
 
-    <!-- FILMS: replace each placeholder with a real film. Copy one <article> block to add more. -->
-    <section id="films">
-      <h2>Films and video</h2>
+<section id="game">
+  <h2>/game: hack the terminal</h2>
+  <p class="dim">Crack the secret 4-digit code in 8 tries. Digits never repeat. HIT = right digit, right place. NEAR = right digit, wrong place. Faster and fewer tries = higher score.</p>
+  <div class="game">
+    <div class="term">
+      <div id="out" role="log" aria-live="polite"></div>
+      <form id="guessForm" autocomplete="off"><label for="guess">code&gt;</label><input id="guess" inputmode="numeric" maxlength="4" pattern="[0-9]*" placeholder="1234"><button class="btn sm" type="submit">enter</button></form>
+      <p class="dim">tries left: <b id="tries">8</b> <button id="restart" class="btn sm" type="button">new game</button></p>
+      <form id="saveForm" hidden><label for="pname">name for the scoreboard</label><input id="pname" maxlength="20" required><button class="btn pri sm" type="submit">save score</button></form>
+    </div>
+    <aside class="board"><h3>scoreboard</h3><ol id="board"></ol></aside>
+  </div>
+</section>
 
-      <article class="item">
-        <h3>Short film title</h3>
-        <p class="meta">Director · year · runtime</p>
-        <p>Two sentences on the story and what you wanted the viewer to feel.</p>
-        <p><strong>My role:</strong> Director, plus anything else you did (writing, editing, cinematography).</p>
-        <p><a href="#">Watch on YouTube or Vimeo</a></p>
-      </article>
+<section id="guestbook">
+  <h2>/guestbook</h2>
+  <p class="dim">Leave your signature or a message for me.</p>
+  <form id="revForm" class="rev">
+    <label for="rname">name</label><input id="rname" maxlength="30" required>
+    <label for="rmsg">message</label><textarea id="rmsg" maxlength="300" rows="3" required></textarea>
+    <button class="btn pri" type="submit">sign it</button>
+  </form>
+  <ul id="reviews" class="reviews"></ul>
+</section>
 
-      <article class="item">
-        <h3>Documentary title</h3>
-        <p class="meta">Director · year · runtime</p>
-        <p>What it is about, and how you approached it.</p>
-        <p><a href="#">Watch</a></p>
-      </article>
+<section id="about">
+  <h2>/about</h2>
+  <p>I’m dedicated to pushing creative boundaries and crafting impactful stories for film and media, and I bring a programmer’s way of thinking to how I plan and build them.</p>
+  <div class="grid">
+    <div class="card"><h3>education</h3><p>Daffodil International University<br>B.Sc. in CSE</p></div>
+    <div class="card"><h3>skills</h3><p>C programming · film direction · storytelling · creative writing · editing software you use</p></div>
+    <div class="card"><h3>languages</h3><p>Bangla · English</p></div>
+  </div>
+</section>
 
-      <article class="item">
-        <h3>Video project title</h3>
-        <p class="meta">Role · year</p>
-        <p>Short description of the project and who it was for.</p>
-        <p><a href="#">Watch</a></p>
-      </article>
-    </section>
-
-    <!-- CODE PROJECTS: copy one <article> block to add a new project. Newest first. -->
-    <section id="projects">
-      <h2>Code projects</h2>
-      <p class="section-intro">Five C programs from my coursework and practice. Each one runs from the terminal.</p>
-
-      <article class="item">
-        <h3>Student Record Management</h3>
-        <p class="meta">C · binary file storage</p>
-        <p><strong>Goal:</strong> Store and manage student records so they survive after the program closes.</p>
-        <p><strong>What I built:</strong> A menu-driven program that saves each student (ID, name, marks) to a binary file and rejects duplicate IDs.</p>
-        <p><strong>What I practiced:</strong> File I/O with structs, input validation.</p>
-        <p><a href="https://github.com/abshah01/c-projects">Source code</a></p>
-      </article>
-
-      <article class="item">
-        <h3>Library Management</h3>
-        <p class="meta">C · linked list</p>
-        <p><strong>Goal:</strong> Track books and who has borrowed them, including late fines.</p>
-        <p><strong>What I built:</strong> A linked-list system for adding and finding books, issuing them with a 7-day loan period, and charging a fine per late day.</p>
-        <p><strong>What I practiced:</strong> Dynamic memory, linked lists, working with time.</p>
-        <p><a href="https://github.com/abshah01/c-projects">Source code</a></p>
-      </article>
-
-      <article class="item">
-        <h3>Tic-Tac-Toe with Minimax AI</h3>
-        <p class="meta">C · game AI</p>
-        <p><strong>Goal:</strong> Build a computer opponent that never loses.</p>
-        <p><strong>What I built:</strong> A console game where you play X against an AI that uses the minimax algorithm to pick its moves.</p>
-        <p><strong>What I practiced:</strong> Recursion, game trees, algorithm design.</p>
-        <p><a href="https://github.com/abshah01/c-projects">Source code</a></p>
-      </article>
-
-      <article class="item">
-        <h3>Bank Account Simulator</h3>
-        <p class="meta">C · persistence</p>
-        <p><strong>Goal:</strong> Simulate a simple bank account with basic security.</p>
-        <p><strong>What I built:</strong> PIN login, deposits and withdrawals, a balance saved between runs, and a transaction log file with timestamps.</p>
-        <p><strong>What I practiced:</strong> Data persistence, logging, state handling.</p>
-        <p><a href="https://github.com/abshah01/c-projects">Source code</a></p>
-      </article>
-
-      <article class="item">
-        <h3>Word Counter and Search</h3>
-        <p class="meta">C · command line</p>
-        <p><strong>Goal:</strong> Make a small version of the wc and grep tools.</p>
-        <p><strong>What I built:</strong> A command-line tool that reports lines, words and characters in a file, and searches it for a word you pass in.</p>
-        <p><strong>What I practiced:</strong> Command-line arguments, text processing.</p>
-        <p><a href="https://github.com/abshah01/c-projects">Source code</a></p>
-      </article>
-    </section>
-
-    <!-- WRITING: replace the placeholder with a real piece. Copy the <article> block to add more. -->
-    <section id="writing">
-      <h2>Writing and poetry</h2>
-
-      <article class="item">
-        <h3>Poem or piece title</h3>
-        <p class="meta">Poetry · year</p>
-        <p>Paste a short excerpt here, or one line about what the piece is about.</p>
-        <p><a href="#">Read the full piece</a></p>
-      </article>
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>I’m dedicated to pushing creative boundaries and crafting impactful stories for the film and media landscape, and I bring a programmer’s way of thinking to how I plan and build them.</p>
-
-      <div class="about-grid">
-        <div>
-          <h3>Education</h3>
-          <ul>
-            <li>Daffodil International University<br>B.Sc. in Computer Science &amp; Engineering</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Skills and tools</h3>
-          <ul>
-            <li>C programming</li>
-            <li>Film direction and storytelling</li>
-            <li>Creative writing and poetry</li>
-            <li>Editing software you use</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Interests</h3>
-          <ul>
-            <li>Film direction</li>
-            <li>Poetry and creative writing</li>
-            <li>Programming in C</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Languages</h3>
-          <ul>
-            <li>Bangla</li>
-            <li>English</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Want to work together or just say hello? Email or call me and I’ll reply as soon as I can.</p>
-      <p>Phone: <a href="tel:01352247437">01352247437</a></p>
-      <p><a href="mailto:masnoonabrarsiam63@gmail.com">masnoonabrarsiam63@gmail.com</a></p>
-      <p class="links">
-        <!-- Replace the LinkedIn link with your own profile URL -->
-        <a href="https://www.linkedin.com/">LinkedIn</a>
-        <a href="https://github.com/abshah01">GitHub</a>
-      </p>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <p>© 2026 Masnoon Abrar Siam</p>
-  </footer>
-
+<section id="contact">
+  <h2>/contact</h2>
+  <p>Want to work together or just say hi?</p>
+  <p class="row"><a class="btn" href="mailto:masnoonabrarsiam63@gmail.com">email</a><a class="btn" href="tel:01352247437">call</a><a class="btn" href="https://github.com/abshah01">github</a><!-- TODO: replace with your real LinkedIn profile --><a class="btn" href="https://www.linkedin.com/">linkedin</a></p>
+</section>
+</main>
+<footer><p>© 2026 Masnoon Abrar Siam · visitors: <b id="visits2">------</b></p></footer>
+<script type="module" src="app.js"></script>
 </body>
 </html>
