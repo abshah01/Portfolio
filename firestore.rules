@@ -6,10 +6,11 @@ service cloud.firestore {
       allow create: if request.resource.data.count == 1;
       allow update: if request.resource.data.count == resource.data.count + 1;
     }
-    match /scores/{id} {
-      allow read: if true;
-      allow create: if request.resource.data.name is string && request.resource.data.name.size() <= 20
-        && request.resource.data.score is int && request.resource.data.score >= 0 && request.resource.data.score <= 2000;
+    match /{col}/{id} {
+      allow read: if col in ['scores', 'snake'];
+      allow create: if col in ['scores', 'snake']
+        && request.resource.data.name is string && request.resource.data.name.size() <= 20
+        && request.resource.data.score is int && request.resource.data.score >= 0 && request.resource.data.score <= 5000;
     }
     match /reviews/{id} {
       allow read: if true;

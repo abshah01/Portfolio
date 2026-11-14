@@ -1,6 +1,6 @@
 # Portfolio v2 (hacker theme)
 
-Features: matrix/neon theme switch, sound effects (SOUND button), "Hack the terminal" puzzle game with scoreboard, visitor counter, guestbook, featured project (Teish Taka).
+Features: anatomy-plate theme (bone, teal and rose) with a THEME switch, sound effects (SOUND button), Snake and "Hack the terminal" games with a scoreboard each, visitor counter, guestbook, featured project (Teish Taka).
 
 ## Run
 Do not double-click `index.html` (browsers block modules from files). Use VS Code "Live Server", or just push to GitHub and open the deployed site.

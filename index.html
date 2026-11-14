@@ -7,7 +7,7 @@
 <meta name="description" content="CSE student and short film director. Portfolio with a hacking puzzle game and a guestbook.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,9 +20,10 @@
 
 <main id="top">
 <section class="hero">
+  <p class="plate">Plate I · Anatomy of a developer</p>
   <p class="prompt">abrar@portfolio:~$ <span id="typed"></span><span class="cur">_</span></p>
   <h1>Masnoon Abrar Siam</h1>
-  <p class="lead">CSE student at Daffodil International University. I write C, direct short films and documentaries, and write poetry. Logic and storytelling, same brain.</p>
+  <p class="lead">I’m a CSE student at Daffodil International University who dissects systems in C and builds stories on film. Skin, muscle, bone: I like seeing how things work underneath, in code, in cinema and in poetry.</p>
   <p class="visits">visitors: <b id="visits">------</b></p>
   <p class="row"><a class="btn pri" href="#featured">featured project</a><a class="btn" href="#game">play the game</a><a class="btn" href="#guestbook">sign my guestbook</a><a class="btn" href="resume.pdf">download cv</a></p>
 </section>
@@ -69,13 +70,21 @@
 </section>
 
 <section id="game">
-  <h2>/game: hack the terminal</h2>
-  <p class="dim">Crack the secret 4-digit code in 8 tries. Digits never repeat. HIT = right digit, right place. NEAR = right digit, wrong place. Faster and fewer tries = higher score.</p>
+  <h2>/game</h2>
+  <p class="row"><button class="btn sm" type="button" data-g="snake" aria-pressed="true">snake</button><button class="btn sm" type="button" data-g="term" aria-pressed="false">hack the terminal</button></p>
   <div class="game">
-    <div class="term">
-      <div id="out" role="log" aria-live="polite"></div>
-      <form id="guessForm" autocomplete="off"><label for="guess">code&gt;</label><input id="guess" inputmode="numeric" maxlength="4" pattern="[0-9]*" placeholder="1234"><button class="btn sm" type="submit">enter</button></form>
-      <p class="dim">tries left: <b id="tries">8</b> <button id="restart" class="btn sm" type="button">new game</button></p>
+    <div>
+      <div id="snakeBox" class="term">
+        <p class="dim">arrows, WASD or swipe. eat the dots. score: <b id="sscore">0</b> <button id="snStart" class="btn sm" type="button">start</button></p>
+        <canvas id="snake" width="360" height="360" aria-label="Snake game"></canvas>
+        <div class="pad"><button class="btn sm" type="button" data-d="u" aria-label="up">↑</button><button class="btn sm" type="button" data-d="l" aria-label="left">←</button><button class="btn sm" type="button" data-d="d" aria-label="down">↓</button><button class="btn sm" type="button" data-d="r" aria-label="right">→</button></div>
+      </div>
+      <div id="termBox" class="term" hidden>
+        <p class="dim">Crack the 4-digit code in 8 tries, no repeated digits. HIT = right digit and place. NEAR = right digit, wrong place.</p>
+        <div id="out" role="log" aria-live="polite"></div>
+        <form id="guessForm" autocomplete="off"><label for="guess">code&gt;</label><input id="guess" inputmode="numeric" maxlength="4" pattern="[0-9]*" placeholder="1234"><button class="btn sm" type="submit">enter</button></form>
+        <p class="dim">tries left: <b id="tries">8</b> <button id="restart" class="btn sm" type="button">new game</button></p>
+      </div>
       <form id="saveForm" hidden><label for="pname">name for the scoreboard</label><input id="pname" maxlength="20" required><button class="btn pri sm" type="submit">save score</button></form>
     </div>
     <aside class="board"><h3>scoreboard</h3><ol id="board"></ol></aside>
@@ -106,7 +115,9 @@
 <section id="contact">
   <h2>/contact</h2>
   <p>Want to work together or just say hi?</p>
-  <p class="row"><a class="btn" href="mailto:masnoonabrarsiam63@gmail.com">email</a><a class="btn" href="tel:01352247437">call</a><a class="btn" href="https://github.com/abshah01">github</a><!-- TODO: replace with your real LinkedIn profile --><a class="btn" href="https://www.linkedin.com/">linkedin</a></p>
+  <p class="mono">email: <a href="mailto:masnoonabrarsiam63@gmail.com">masnoonabrarsiam63@gmail.com</a> <button class="btn sm" type="button" data-copy="masnoonabrarsiam63@gmail.com">copy</button></p>
+  <p class="mono">phone: <a href="tel:01352247437">01352247437</a> <button class="btn sm" type="button" data-copy="01352247437">copy</button></p>
+  <p class="row"><a class="btn" href="https://github.com/abshah01" target="_blank" rel="noopener">github</a><!-- TODO: replace with your real LinkedIn profile --><a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">linkedin</a></p>
 </section>
 </main>
 <footer><p>© 2026 Masnoon Abrar Siam · visitors: <b id="visits2">------</b></p></footer>
